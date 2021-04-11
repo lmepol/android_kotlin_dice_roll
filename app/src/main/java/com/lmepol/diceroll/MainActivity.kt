@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.count_up_btn).setOnClickListener{
             countUp()
         }
-        roll()
     }
     private fun roll() {
         val rand_val = (1..6).random()
