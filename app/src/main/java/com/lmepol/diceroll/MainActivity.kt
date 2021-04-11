@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.roll_btn).setOnClickListener{
             roll()
         }
-        roll()
     }
     private fun roll() {
         val rand_val = (1..6).random()
