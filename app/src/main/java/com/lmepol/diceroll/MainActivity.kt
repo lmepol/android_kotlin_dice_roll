@@ -1,21 +1,22 @@
 package com.lmepol.diceroll
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
-import java.lang.NumberFormatException
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var diceImageView: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.roll_btn).setOnClickListener{
+        diceImageView = findViewById(R.id.dice_image)
+        findViewById<Button>(R.id.roll_btn).setOnClickListener {
             roll()
         }
-        findViewById<Button>(R.id.count_up_btn).setOnClickListener{
+        findViewById<Button>(R.id.count_up_btn).setOnClickListener {
             countUp()
         }
     }
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             6 -> R.drawable.dice_6
             else -> R.drawable.dice_1
         }
-        findViewById<ImageView>(R.id.dice_image).setImageResource(imageRecource)
+        diceImageView.setImageResource(imageRecource)
         Toast.makeText(this, "$rand_val", Toast.LENGTH_LONG).show()
     }
     private fun countUp(){
